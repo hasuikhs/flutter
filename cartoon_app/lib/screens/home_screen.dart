@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: snapshot.data!.length,
       padding: const EdgeInsets.symmetric(
-        vertical: 10,
+        vertical: 30,
         horizontal: 20,
       ),
       itemBuilder: (context, index) {
