@@ -17,6 +17,14 @@ class CustomTextFormField extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  String? validateInput(String? value) {
+    if (value == null || value.isEmpty) {
+      return '입력값이 필요합니다.';
+    }
+
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     const baseBorder = OutlineInputBorder(
@@ -28,18 +36,15 @@ class CustomTextFormField extends StatelessWidget {
 
     return TextFormField(
       cursorColor: PRIMARY_COLOR,
-      // 비밀번호 입력시
       obscureText: obscureText,
       autofocus: autofocus,
+      validator: validateInput,
       onChanged: onChanged,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(20),
-        hintText: hintText,
         errorText: errorText,
-        hintStyle: const TextStyle(
-          color: BODY_TEXT_COLOR,
-          fontSize: 14.0,
-        ),
+        hintText: hintText,
+        hintStyle: const TextStyle(color: BODY_TEXT_COLOR, fontSize: 14.0),
         fillColor: INPUT_BG_COLOR,
         filled: true,
         border: baseBorder,
