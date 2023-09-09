@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest/user/login_screen.dart';
+import 'package:flutter_rest/common/view/spash_screen.dart';
 
 void main() {
   runApp(const _App());
@@ -11,7 +11,7 @@ class _App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: LoginScreen(),
+      home: SplashScreen(),
     );
   }
 }
